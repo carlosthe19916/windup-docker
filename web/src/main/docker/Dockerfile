@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
+FROM jboss/base-jdk:8
 
 ENV RHAMT_HOME /opt/jboss/rhamt-web
 
