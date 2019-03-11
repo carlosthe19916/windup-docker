@@ -7,17 +7,15 @@ USER root
 # Add rhamt distribution to /opt/jboss
 ADD maven/opt/jboss/rhamt-web ${RHAMT_HOME}
 
-# Make windup the owner of the content
+# Make jboss the owner of the content
 RUN cd $HOME  \
-    && adduser windup \
-    && chown -R windup:0 ${RHAMT_HOME}  \
-    && chmod -R g+rw ${RHAMT_HOME} \
-    && rm -rf ${RHAMT_HOME}/standalone/configuration/standalone_xml_history/
+    && chown -R jboss:0 ${RHAMT_HOME}  \
+    && chmod -R g+rw ${RHAMT_HOME}
 
 # Ensure signals are forwarded to the JVM process correctly for grateful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
-USER windup
+USER jboss
 
 # Expose the ports we're interesting in
 EXPOSE 8080
