@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+        <version>22</version>
+        <relativePath />
+    </parent>
+
+    <groupId>org.jboss.windup</groupId>
+    <artifactId>windup-docker-parent</artifactId>
+    <version>4.2.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Windup Docker - Parent</name>
+    <description>Docker image generation for Windup</description>
+
+
+    <properties>
+        <version.fabric8>3.5.28</version.fabric8>
+        <version.keycloak>4.8.3.Final</version.keycloak>
+
+        <windup.web.scm.connection>scm:git:https://github.com/windup/windup-docker.git</windup.web.scm.connection>
+        <windup.web.developer.connection>scm:git:git@github.com:windup/windup-docker.git</windup.web.developer.connection>
+        <windup.web.scm.url>http://github.com/windup/windup-docker</windup.web.scm.url>
+    </properties>
+
+    <scm>
+        <tag>master</tag>
+        <connection>${windup.web.scm.connection}</connection>
+        <developerConnection>${windup.web.developer.connection}</developerConnection>
+        <url>${windup.web.scm.url}</url>
+    </scm>
+
+    <issueManagement>
+        <system>JBoss Jira</system>
+        <url>https://issues.jboss.org/browse/WINDUP</url>
+    </issueManagement>
+    <mailingLists>
+        <mailingList>
+            <name>Windup Usage and Rules Development</name>
+            <post>windup-users@lists.jboss.org</post>
+            <archive>http://lists.jboss.org/pipermail/windup-users/</archive>
+        </mailingList>
+        <mailingList>
+            <name>Windup Core Development</name>
+            <post>windup-dev@lists.jboss.org</post>
+            <archive>http://lists.jboss.org/pipermail/windup-dev/</archive>
+        </mailingList>
+    </mailingLists>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    
+    <modules>
+        <module>web</module>
+    </modules>
+</project>
