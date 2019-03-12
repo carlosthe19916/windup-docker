@@ -1,4 +1,4 @@
-FROM jboss/base-jdk:8
+FROM jboss/base-jdk:11
 
 ENV RHAMT_HOME /opt/jboss/rhamt-web
 
