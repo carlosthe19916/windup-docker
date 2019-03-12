@@ -1,4 +1,4 @@
-FROM jboss/base-jdk:11
+FROM jboss/base-jdk:8
 
 ENV RHAMT_HOME /opt/jboss/rhamt-web
 
@@ -10,7 +10,8 @@ ADD maven/opt/jboss/rhamt-web ${RHAMT_HOME}
 # Make jboss the owner of the content
 RUN cd $HOME  \
     && chown -R jboss:0 ${RHAMT_HOME}  \
-    && chmod -R g+rw ${RHAMT_HOME}
+    && chmod -R g+rw ${RHAMT_HOME} \
+    && rm -rf ${RHAMT_HOME}/standalone/configuration/standalone_xml_history/
 
 # Ensure signals are forwarded to the JVM process correctly for grateful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
