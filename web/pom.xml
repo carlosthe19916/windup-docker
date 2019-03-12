@@ -39,6 +39,7 @@
                             <name>${docker.name.windup.web}</name>
                             <build>
                                 <dockerFile>Dockerfile</dockerFile>
+                                <filter>@</filter>
                                 <assembly>
                                     <targetDir>/</targetDir>
                                     <descriptor>assembly/assembly.xml</descriptor>
@@ -55,7 +56,7 @@
                         <id>copy-dependencies</id>
                         <phase>compile</phase>
                         <goals>
-                            <goal>unpack</goal>
+                            <goal>copy</goal>
                         </goals>
                         <configuration>
                             <artifactItems>

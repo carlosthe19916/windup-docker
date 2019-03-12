@@ -6,7 +6,7 @@
     <!-- Add distribution files -->
     <fileSets>
         <fileSet>
-            <directory>${project.build.directory}/rhamt-web/rhamt-web-distribution-${version.windup.web}/</directory>
+            <directory>${project.build.directory}/rhamt-web/</directory>
             <outputDirectory>opt/jboss/rhamt-web</outputDirectory>
         </fileSet>
     </fileSets>
